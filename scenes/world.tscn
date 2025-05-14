@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dmsrlx737l8qn"]
+[gd_scene load_steps=22 format=3 uid="uid://dmsrlx737l8qn"]
 
 [ext_resource type="Texture2D" uid="uid://c2jrb8cj3tcw6" path="res://art/Cute_Fantasy_Free/Tiles/Path_Tile.png" id="1_qfnet"]
 [ext_resource type="Texture2D" uid="uid://cqfq7ewi0todx" path="res://art/Cute_Fantasy_Free/Tiles/Grass_Middle.png" id="2_i7141"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ysw7q5n3qubt" path="res://art/Cute_Fantasy_Free/Outdoor decoration/Outdoor_Decor_Free.png" id="8_7r4gi"]
 [ext_resource type="Texture2D" uid="uid://c1lcx5nxm3lim" path="res://art/Cute_Fantasy_Free/Tiles/Cliff_Tile.png" id="9_7r4gi"]
 [ext_resource type="PackedScene" uid="uid://c31afmtrrsbdu" path="res://scenes/player.tscn" id="10_w7kh3"]
+[ext_resource type="PackedScene" uid="uid://cpnhf51c1n165" path="res://scenes/enemy.tscn" id="11_e3hyu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q5onr"]
 texture = ExtResource("1_qfnet")
@@ -77,6 +78,8 @@ texture = ExtResource("6_e3hyu")
 texture = ExtResource("7_4mrxx")
 0:0/size_in_atlas = Vector2i(5, 7)
 0:0/0 = 0
+0:0/0/y_sort_origin = 40
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-28.0395, 6.69125, 27.4022, 5.41672, 28.5174, 49.5471, -28.8361, 49.2285)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e3hyu"]
 texture = ExtResource("8_7r4gi")
@@ -184,7 +187,10 @@ layer_1/name = "cliff"
 layer_1/tile_data = PackedInt32Array(65538, 8, 0, 65539, 65544, 0, 65540, 65544, 0, 65541, 65544, 0, 65542, 65544, 0, 65543, 65544, 0, 65544, 65544, 0, 65545, 65544, 0, 65546, 65544, 0, 65547, 65544, 0, 65548, 65544, 0, 65549, 65544, 0, 65550, 65544, 0, 65551, 65544, 0, 65552, 65544, 0, 65553, 65544, 0, 65554, 65544, 0, 65555, 65544, 0, 65556, 65544, 0, 65557, 65544, 0, 65558, 65544, 0, 65559, 65544, 0, 65560, 65544, 0, 65561, 65544, 0, 65562, 65544, 0, 65563, 65544, 0, 65564, 65544, 0, 65565, 65544, 0, 65566, 65544, 0, 65567, 65544, 0, 65568, 65544, 0, 65569, 131080, 0, 131105, 131080, 1, 196641, 131080, 1, 262177, 131080, 1, 327713, 131080, 1, 393249, 131080, 1, 458785, 131080, 1, 524321, 131080, 1, 589857, 131080, 1, 655393, 131080, 1, 720929, 131080, 1, 786465, 131080, 1, 852001, 131080, 1, 917537, 131080, 1, 983073, 131080, 1, 1048609, 131080, 1, 1114145, 131080, 1, 1179681, 131080, 1, 1245217, 131080, 1, 1310753, 131080, 2, 1310722, 8, 2, 1310723, 65544, 2, 1310724, 65544, 2, 1310725, 65544, 2, 1310726, 65544, 2, 1310727, 65544, 2, 1310728, 65544, 2, 1310729, 65544, 2, 1310730, 65544, 2, 1310731, 65544, 2, 1310732, 65544, 2, 1310733, 65544, 2, 1310734, 65544, 2, 1310735, 65544, 2, 1310736, 65544, 2, 1310737, 65544, 2, 1310738, 65544, 2, 1310739, 65544, 2, 1310740, 65544, 2, 1310741, 65544, 2, 1310742, 65544, 2, 1310743, 65544, 2, 1310744, 65544, 2, 1310745, 65544, 2, 1310746, 65544, 2, 1310747, 65544, 2, 1310748, 65544, 2, 1310749, 65544, 2, 1310750, 65544, 2, 1310751, 65544, 2, 1310752, 65544, 2, 131074, 8, 1, 196610, 8, 1, 262146, 8, 1, 327682, 8, 1, 393218, 8, 1, 458754, 8, 1, 524290, 8, 1, 589826, 8, 1, 655362, 8, 1, 720898, 8, 1, 786434, 8, 1, 851970, 8, 1, 917506, 8, 1, 983042, 8, 1, 1048578, 8, 1, 1114114, 8, 1, 1179650, 8, 1, 1245186, 8, 1)
 layer_2/name = "objects"
 layer_2/y_sort_enabled = true
-layer_2/tile_data = PackedInt32Array(983045, 6, 0, 983050, 6, 0, 983055, 6, 0, 1179677, 5, 0, 589835, 2, 0, 196638, 2, 0, 720914, 2, 0, 720927, 2, 0, 1114132, 131075, 0, 393248, 131075, 0, 131094, 131075, 0, 655364, 131075, 0, 196618, 2, 0, 196621, 2, 0, 458756, 2, 0, 196611, 2, 0)
+layer_2/tile_data = PackedInt32Array(983045, 6, 0, 983050, 6, 0, 983055, 6, 0, 1179677, 5, 0, 196638, 2, 0, 720914, 2, 0, 720927, 2, 0, 1114132, 131075, 0, 393248, 131075, 0, 131094, 131075, 0, 131082, 6, 0, 196622, 2, 0, 458756, 2, 0, 458760, 2, 0, 131075, 131075, 0)
 
 [node name="player" parent="." instance=ExtResource("10_w7kh3")]
 position = Vector2(106, 81)
+
+[node name="enemy" parent="." instance=ExtResource("11_e3hyu")]
+position = Vector2(282, 106)
