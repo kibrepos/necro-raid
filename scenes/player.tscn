@@ -1,7 +1,10 @@
-[gd_scene load_steps=56 format=3 uid="uid://c31afmtrrsbdu"]
+[gd_scene load_steps=57 format=3 uid="uid://c31afmtrrsbdu"]
 
 [ext_resource type="Script" uid="uid://cka53kr68fr0r" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://da0juoe8lsrih" path="res://art/Cute_Fantasy_Free/Player/Player.png" id="2_qhqgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(11, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("2_qhqgy")
@@ -424,8 +427,12 @@ animations = [{
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_74r1k")
 animation = &"front_walk"
 frame_progress = 0.510076
